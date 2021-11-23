@@ -1,0 +1,52 @@
+if user
+  nav.nav.nav-look
+    a(href='http://127.0.0.1:8000/')
+      img.logo(src='/img/logo.png' alt='coloco logo')
+
+      .nav_links.nav_links-loggedin
+        img.nav-loggedin__image(src=`/img/users/${user.photo}`)
+        a.nav-loggedin__profile-link.btn.btn--signup(href='/myProfile')= user.firstName
+        a.nav-loggedin__profile-link.btn.btn--logout Logout
+else             
+  nav.nav.nav-look
+    a(href='http://127.0.0.1:8000/')
+      img.logo(src='/img/logo.png' alt='coloco logo')
+
+      .nav_links
+        a.btn.btn--signup(href='/signup') signup
+        a.btn.btn--login(href='/login') login
+
+.menu.main-menu
+  div.leftLinks
+      a.btnLink(href='') offers
+      a.btnLink(href='') requests
+      a.btnLink(href='') my-coloco
+      a.btnLink(href='') contact & help
+      a.btnLink(href='') tips & guides
+  a.btnLink(href='/createAd') create an ad
+
+nav.nav-small
+  a(href='http://127.0.0.1:8000/')
+    img.logo-small(src='/img/logo.png' alt='coloco logo')
+  .nav_links-small
+    .user-btn
+      input#user-check(type='checkbox' class='user-check')
+      label(for='user-check')
+        a(href='/myProfile')
+        if user
+          img.undefined-user(src=`/img/users/${user.photo}` alt='undefined user photo')
+        else
+          img.undefined-user(src=`/img/users/user.jpg` alt='undefined user photo')
+    .nav-btn
+      input#small-nav.input-small(type='checkbox')
+      label.label-small(for='small-nav')
+       span
+.menu.menu-small
+  .leftLinks
+      a.btnLink(href='#') offers
+      a.btnLink(href='#') requests
+      a.btnLink(href='#') my-coloco 
+      a.btnLink(href='#') contact & help 
+      a.btnLink(href='#') tips & guides
+  a.btnLink(href='/createAd') create an ad
+    

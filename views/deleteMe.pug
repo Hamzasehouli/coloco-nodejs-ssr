@@ -1,0 +1,12 @@
+extends base
+
+block content 
+    section.section-backend
+        form.form-backend.form-backend--delete(action='#')
+            input#password.input-backend(required
+                placeholder='password'
+                type='password'
+                minlength='8'
+                maxlength='60')
+            button.form-backend_btn.form-backend_btn--delete(type='submit') Delete my account
+

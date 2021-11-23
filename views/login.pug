@@ -1,0 +1,23 @@
+extends base
+
+block content 
+    section.section-backend
+        form.form-backend.form-backend--login(action='#')
+
+            input#email.input-backend(
+                placeholder='email address'
+                type='email'
+                required)
+
+            input#password.input-backend(required
+                placeholder='password'
+                type='password'
+                minlength='8'
+                maxlength='60')
+
+            button.form-backend_btn.form-backend_btn--login(type='submit') login
+            p Do not have an account? 
+                a(href='/signup') signup
+            .login-label(for="terms")
+                a(href='/forgetPassword') forget password?
+          

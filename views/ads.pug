@@ -1,0 +1,35 @@
+extends base
+
+block content 
+    section.ads
+        .ads__nav
+        .headings
+            h2.heading-secondary= `${ads.length} flat rentals for students`
+            
+            h3.heading-tertiary Discover the properties we have selected for you
+         
+        .ads__container
+            each ad in ads
+                .ad__box.ad__box--1
+                    figure.ad__figure
+                        a(href=`/ad/${ad.id}`)
+                            img.ad__image.ad__image--1(src=`img/users/${ad.imageCover}` alt='')
+                        a(href='http://livescore.com')
+                            svg.ad__icon
+                                use(href='/img/sprite.svg#icon-heart-o')
+                        
+                        a.ad__user(href='#')
+                            img.ad__user-photo(src=`img/users/${ad.user.photo}` alt='')
+                        
+                    .ad__details
+                        h5.heading-five= ad.title
+                        p.ad__description Studio de 18 m² meublé et équipé
+                        p.ad__size= `${ad.size}m² - ${ad.rentPerMonth} €`
+                        p.ad__address 
+                            svg.ad__pin
+                                use(href='/img/sprite.svg#icon-location2')  
+                            kak #{ad.city}`
+                        
+                    
+            
+            

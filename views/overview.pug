@@ -1,0 +1,73 @@
+extends base
+
+block content 
+    figure.hero-container
+        .search-container
+            h1.heading-primary.u-margin-bottom-7 Up to 500,000 contact inquiries per month
+
+            form.header_form(action='#')
+                input.input.input-city(placeholder='Enter city' type='text')
+
+                select.input.input-type
+                    option(selected) 1 room flats
+                    option flats
+                    option flatshares
+                    option houses
+
+                select.input.input-offers(name='' id='')
+                    option(selected value='') offer
+                    option(value='') request
+
+                button.btn-form(type='submit') find
+
+
+    main.main
+        section.section-how
+            .box
+                h3.heading-tertiary.u-margin-bottom-5 How to use us successfully
+
+                p.u-margin-bottom-5 On WG-Gesucht.de you can quickly and easily advertise your Ad for an apartment to share, a flat or a house for rent or short term rent.
+
+
+            .box
+                h3.heading-tertiary.u-margin-bottom-5 Create Offers
+                p.u-margin-bottom-5 If you are searching for a new flat or house mate or your next tenant, please create your Offer here.
+
+                a.btn-how(href='/createAd') create offer
+
+            .box
+                h3.heading-tertiary.u-margin-bottom-5 Create Requests
+                p.u-margin-bottom-5 If you are interested in finding a new home, please insert your Request here. Good luck!
+
+                a.btn-how(href='#') create request
+
+
+        section.section-cities
+            h2.heading-secondary.u-margin-left-20 Discover our most popular cities
+            h3.heading-tertiary.u-margin-left-20.u-margin-bottom-7 With us you can find new accommodations all over Morocco every day Casablanca
+            .cities-container
+                a.city-link(href='#')
+                    figure.figure-city.figure-city--1
+                        h4.heading-qurtary Agadir
+
+                a.city-link(href='#')
+                    figure.figure-city.figure-city--2
+                        h4.heading-qurtary Casablanca
+
+                a.city-link(href='#')
+                    figure.figure-city.figure-city--3
+                        h4.heading-qurtary Marrakesh
+
+                a.city-link(href='#')
+                    figure.figure-city.figure-city--4
+                        h4.heading-qurtary Tangier
+
+                a.city-link(href='#')
+                    figure.figure-city.figure-city--5
+                        h4.heading-qurtary Fes
+
+                a.city-link(href='#')
+                    figure.figure-city.figure-city--6
+                        h4.heading-qurtary Rabat
+
+

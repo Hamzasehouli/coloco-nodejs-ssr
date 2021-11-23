@@ -1,0 +1,8 @@
+extends base
+
+block content 
+    .error
+        .error__message= err
+        
+        a.btn--signup.btn--error--signup(href='/signup') signup
+        a.btn--login.btn--error--login(href='/login') login

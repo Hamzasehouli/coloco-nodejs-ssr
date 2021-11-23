@@ -1,0 +1,45 @@
+extends base
+
+block content
+    section.section-backend
+        form.form-backend.form-backend--signup(action='#')
+            h3.heading-tertiary signup
+            select#title.select-backend(name='')
+                option(value='Mrs/Ms') Mrs/Ms
+                option(value='Mr' selected) Mr
+                option(value='Not specified') Not specified
+
+            input#firstName(
+                placeholder='First name*'
+                type='text'
+                class='input-backend'
+                required)
+
+            input#lastName(
+                placeholder='last name*'
+                type='text'
+                class='input-backend'
+                required)
+
+            input#email(
+                placeholder='email address*'
+                type='email'
+                class='input-backend'
+                required)
+
+            input#password(
+                placeholder='password (8-60 characters)*'
+                type='password'
+                class='input-backend'
+                minlength='8'
+                maxlength='60')
+
+            input#passwordConfirm(
+                placeholder='re-type password (8-60 characters)*'
+                type='password'
+                class='input-backend'
+                minlength='8'
+                maxlength='60')
+
+            button.form-backend_btn.form-backend_btn--signup(type='submit') next
+            a(href='/login') Already have an account?

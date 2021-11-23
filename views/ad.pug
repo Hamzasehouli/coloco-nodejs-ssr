@@ -1,0 +1,68 @@
+extends base
+
+block content 
+
+    .myAd
+        // -----------------------------------contact--------------------------------------------------
+        .myAd__contact
+            // -----------------------------------heading--------------------------------------------------
+            h2.myAd__heading-2 contact information
+            // -----------------------------------ad user--------------------------------------------------
+            .myAd__user
+                img.myAd__userPhoto(src=`/img/users/${userOfAd.photo}`)
+                .myAd__userInfo
+                    p.myAd__userName  #{userOfAd.firstName}
+                    p.myAd__memberSince member since:
+                    p.myAd__memberSinceDate= `${new Intl.DateTimeFormat('en-US').format(userOfAd.profileCreatedAt)}`
+                    p.myAd__memberSince telephone:
+                    p.myAd__userTelephone #{userOfAd.telephonNumber}
+        // -----------------------------------ad infos--------------------------------------------------
+        .myAd__infos
+            h1.myAd__heading-1 #{ad.title}
+            figure.myAd__figure
+                img.myAd__figure--image.myAd__figure--image--4(src='/img/hero.jpg')
+                img.myAd__figure--image.myAd__figure--image--3(src='/img/hero.jpg')
+                img.myAd__figure--image.myAd__figure--image--2(src='/img/hero.jpg')
+                img.myAd__figure--image.myAd__figure--image--1(src=`/img/users/${ad.imageCover}`)
+                svg.chevron.chevron--left
+                    use(href='/symbol-defs.svg#icon-cheveron-left')
+                svg.chevron.chevron--right
+                    use(href='/symbol-defs.svg#icon-cheveron-right')
+                .dot-container
+                    span.dot.dot--active
+                    span.dot
+                    span.dot
+                    span.dot
+            .myAd__sizeAndFinalRent-box
+                .myAd__sizeAndFinalRent
+                    p #{ad.size}m&sup2;
+                    h3.myAd__heading-3 size
+                .myAd__sizeAndFinalRent
+                    p #{ad.rentPerMonth + ad.utilityCosts }&euro;
+                    h3.myAd__heading-3 final rent
+            .myAd__baseInfos
+                .myAd__price
+                    h2.myAd__heading-2 Price
+                    ul.myAd__list
+                        li.myAd__item
+                            span.myAd__item--title base rent
+                            span.myAd__item--price #{ad.rentPerMonth}&euro;
+                        li.myAd__item
+                            span.myAd__item--title utilities
+                            span.myAd__item--price #{ad.utilityCosts}&euro;
+                        li.myAd__item
+                            span.myAd__item--title Deposit:
+                            span.myAd__item--price #{ad.deposit}&euro;
+                .myAd__adresseContainer
+                    h2.myAd__heading-2 Adresse
+                    a.myAd__adresse(href='#') #{ad.adresse}
+                .myAd__availabilityContainer
+                    h2.myAd__heading-2 Availability
+                    p.myAd__availability
+                        | from 
+                        span= `${new Intl.DateTimeFormat('en-US').format(userOfAd.availableFrom)}`
+            .myAd__description
+                h2.myAd__heading-2 Description
+                p #{ad.description}
+                    
+            #map

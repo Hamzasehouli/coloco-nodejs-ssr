@@ -1,0 +1,115 @@
+extends base
+
+block content 
+    .createAd
+
+        form.createAd__form(action='#')
+
+            h2.createAd__heading Start
+            label.createAd__label(for='title') Title of Offer
+            input#title.createAd__input(minlength='10' maxlength='60'  type='text')
+            label.createAd__label(for='city') City
+            input#city.createAd__input(type='text')
+            label.createAd__label(for='category') Category
+            select#category.createAd__select(name='category')
+                option.createAd__option(selected value='Select') Select
+                option.createAd__option(value='Flatshares') Flatshares
+                option.createAd__option(value='1 Room flats') 1 Room flats
+                option.createAd__option(value='Flats') Flats
+                option.createAd__option(value='Houses') Houses
+
+            label.createAd__label(for='rentType') rent type
+            select#rentType.createAd__select(name='rentType')
+                option.createAd__option(selected value='Select') Select
+                option.createAd__option(value='long term') long term
+                option.createAd__option(value='short term' ) short term
+                option.createAd__option(value='overnight stay' ) overnight stay
+
+            h2.createAd__heading Location
+            label.createAd__label(for='district') District*
+            input#district.createAd__input(type='text')
+            label.createAd__label(for='street') Street*
+            input#street.createAd__input(type='text')
+            label.createAd__label(for='houseNumber') house number*
+            input#houseNumber.createAd__input( type='number')
+            label.createAd__label(for='postalCode') postal code*
+            input#postalCode.createAd__input(minlength='5' maxlength='5' type='text')
+            h2.createAd__heading Details about the property
+
+            label.createAd__label(for='availableFrom') Available from*
+            input#availableFrom.createAd__input(type='date')
+            label.createAd__label(for='availableTo') Available to*
+            input#availableTo.createAd__input(type='date')
+            label.createAd__label(for='propertyType') property type
+            select#propertyType.createAd__select(name='propertyType')
+                option.createAd__option(selected value='') Select
+                option.createAd__option(value='old building') old building
+                option.createAd__option(value='renovated old building') renovated old building
+                option.createAd__option(value='newly built building') newly built building
+                option.createAd__option(value='terraced house') terraced house
+                option.createAd__option(value='semi detached house') semi detached house
+                option.createAd__option(value='multi-family house') multi-family house
+                option.createAd__option(value='multi-storey building') multi-storey building
+                option.createAd__option(value='slab construction/prefabricated') slab construction/prefabricated
+
+            label.createAd__label(for='size') room size*
+            input#size.createAd__input(placeholder='m²' type='number')
+            label.createAd__label(for='floorLevel') Floor Level
+            select#floorLevel.createAd__select(name='floorLevel')
+                option.createAd__option(selected value='Select' ) Select
+                option.createAd__option(value='cellar' ) cellar
+                option.createAd__option(value='basement' ) basement
+                option.createAd__option(value='ground floor' ) ground floor
+                option.createAd__option(value='raised ground floor /mezzanine' ) raised ground floor /mezzanine
+                option.createAd__option(value='1st floor' ) 1st floor 
+                option.createAd__option(value='2nd floor' ) 2nd floor 
+                option.createAd__option(value='3rd floor' ) 3rd floor
+                option.createAd__option(value='4th floor' ) 4th floor
+                option.createAd__option(value='loft/attic' ) loft/attic
+                option.createAd__option(value='higher than 5th floor' ) higher than 5th floor
+
+            label.createAd__label(for='parking') Parking
+            select#parking.createAd__select(name='parking')
+                option.createAd__option(selected value='Select' ) Select
+                option.createAd__option(value='many' ) many
+                option.createAd__option(value='underground' ) underground
+                option.createAd__option(value='limited' ) limited
+                option.createAd__option(value='private parking' ) private parking
+                option.createAd__option(value='residential parking' ) residential parking
+
+            h2.createAd__heading costs
+
+            label.createAd__label( for='rentPerMonth') rent per month*
+            input#rentPerMonth.createAd__input(placeholder='MAD' type='number')
+            label.createAd__label(for='utilityCosts') Utility Costs
+            input#utilityCosts.createAd__input(placeholder='MAD' type='number')
+            label.createAd__label(for='deposit') deposit
+            input#deposit.createAd__input(placeholder='MAD' type='number')
+            label.createAd__label(for='description') description
+            textarea#description.createAd__input(placeholder='Please enter a minimum of 150 words.' minlength='150' type='text' maxlength='300' )
+
+            h2.createAd__heading contact details
+
+            label.createAd__label(for='telephone') Telephone number
+            input#telephone.createAd__input(type='tel')
+            label.createAd__label(for='identity') I am *
+            select#identity.createAd__select(name='identity')
+                option.createAd__option(selected value='Select') Select
+                option.createAd__option( value='Select') The owner
+                option.createAd__option( value='the renter') the renter
+                option.createAd__option( value='the caretaker') the caretaker
+                option.createAd__option( value='other') other
+            h2.createAd__heading photos
+
+            .images-uploader
+
+                label.images-uploader__photoBox.images-uploader__photoBox--upload(for='uploader')
+                    p.images-uploader__text browse your photo to add pictures
+                    input#uploader.images-uploader__input( accept="image/*" name='photo' type='file')
+                
+                
+
+                
+                
+
+            button.createAd__btn.form-backend_btn(type='submit') Next

@@ -1,0 +1,60 @@
+extends base
+
+block content 
+    .profile
+        ul.profile__list
+            li.profile__items
+                a(href='myads' class='profile__links') My Ads
+            li.profile__items
+                a(href='/myProfile' class='profile__links profile--active') My Profile
+        .profile__container
+
+            form(action='#' class='profile__form profile__form--settings')
+                .profile__form__box
+                    label(for='title' class='profile__lable')  Title*
+                    select(id='title' type='text' class='profile__input')
+                        option Ms/Mrs
+                        option(selected) Mr
+                        option Not specified
+                .profile__form__box
+                    label(for='email' class='profile__lable') Email*
+                    input(placeholder='Email' value=`${user.email}` id='email' type='email' class='profile__input')
+
+                .profile__form__box
+                    label(for='firstName' class='profile__lable')  First name*
+                    input(placeholder='First name' value=`${user.firstName}` id='firstName' type='text' class='profile__input')
+
+                .profile__form__box
+                    label(for='lastName' class='profile__lable') Last name*
+                    input(placeholder='Last name' value=`${user.lastName}` id='lastName' type='text' class='profile__input')
+
+                .upload-photo
+                    p.upload__title Profile image
+                    figure.upload-photo__figure
+                        img(src=`/img/users/${user.photo}` alt='' class='upload-photo__photo')
+                    input#upload-photo__input(name='photo' type='file')
+                    label#upload-photo__label(for='upload-photo__input' class='upload-photo__btn form-backend_btn') Upload my photo
+
+                button(type='submit' class='form-backend_btn form-backend_btn--settings') save my settings
+
+
+            form(action='#' class='profile__form profile__form--password')
+                .profile__form__box
+                    label(for='current' class='profile__lable') Current password (8 - 60 characters)
+                    input(placeholder='********' id='currentPassword' type='password' class='profile__input')
+
+                .profile__form__box
+                    label(for='password' class='profile__lable') New password (8 - 60 characters)
+                    input(placeholder='********' id='password' type='password' class='profile__input')
+
+                .profile__form__box
+                    label(for='confirm' class='profile__lable') Confirm password re-type(8 - 60 characters)
+                    input(placeholder='********' id='passwordConfirm' type='password' class='profile__input')
+
+                button(type='submit' class='form-backend_btn form-backend_btn--password') update my password
+           
+
+
+            .profile__delete
+                p.delete Do you want to delete your account ?
+                a(href='/deleteMe' class='form-backend_btn form-backend_btn--delete') Delete account
